@@ -1,4 +1,5 @@
-from typing import NamedTuple, Callable, Tuple, Literal
+from __future__ import annotations
+from typing import NamedTuple, Callable, Literal
 import numpy.typing as npt
 import numpy as np
 import numba
@@ -20,7 +21,7 @@ def solve_ivp(
     fun: Callable[
         [float, npt.NDArray[np.float64] | float], npt.NDArray[np.float64] | float
     ],
-    t_span: Tuple[float, float],
+    t_span: tuple[float, float],
     y0: npt.NDArray[np.float64],
     method: Methods = "forward_euler",
     N: int = 50,
